@@ -19,8 +19,8 @@ Aaron Maxwell, Assistant Professor, WVU Department of [Geology and Geography](ht
 Website: [WV View](http://www.wvview.org/)
 
 **Project Collaborators** 
-- WVU Geology and Geography: Michelle Bester, Luis A. Guillen, Jesse Carpinello, Yiting Fan, Faith Hartley, Shannon Maynard, and Jaimee Pyron
-- WVU John Chambers College of Business and Econonmics: Dr. Chris Ramezan, PhD
+- WVU Geology and Geography: Michelle Bester (PhD Student, Geology), Luis A. Guillen (PhD Student, Forestry), Jesse Carpinello (MS student, Geology), Yiting Fan (PhD Student, Geography), Faith Hartley (MA Student, Geography), Shannon Maynard (MS Student, Geology), and Jaimee Pyron (MA Student, Geography)
+- WVU John Chambers College of Business and Econonmics: Dr. Chris Ramezan, PhD (Assistant Professor)
 
 **Aknowledgements**
 - The United States Geological Survey provides public access to historic, scanned, and georeferenced topographic maps via the National Map’s Historical Topographic Map Collection. 
