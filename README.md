@@ -19,7 +19,7 @@ Aaron Maxwell, Assistant Professor, WVU Department of [Geology and Geography](ht
 Website: [WV View](http://www.wvview.org/)
 
 **Project Collaborators** 
-- WVU Geology and Geography: Michelle Bester (PhD Student, Geology), Luis A. Guillen (PhD Student, Forestry), Jesse Carpinello (MS student, Geology), Yiting Fan (PhD Student, Geography), Faith Hartley (MA Student, Geography), Shannon Maynard (MS Student, Geology), and Jaimee Pyron (MA Student, Geography)
+- WVU Geology and Geography: Michelle Bester (PhD Student, Geography), Luis A. Guillen (PhD Student, Forestry), Jesse Carpinello (MS student, Geology), Yiting Fan (PhD Student, Geography), Faith Hartley (MA Student, Geography), Shannon Maynard (MS Student, Geology), and Jaimee Pyron (MA Student, Geography)
 - WVU John Chambers College of Business and Econonmics: Dr. Chris Ramezan, PhD (Assistant Professor)
 
 **Aknowledgements**
