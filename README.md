@@ -86,4 +86,5 @@ Website: [WV View](http://www.wvview.org/)
 
 #### Data Files
 - **tables.zip**: tables used to generate graphs. 
-- **topo_dl_data.zip**: input topographic maps, mine extents, and quad boundaries used in the study. The chip prep script scan be used to created chips and masks from these data. Witin the compressed folder:
+- **topo_dl_data.zip**: input topographic maps, mine extents, and quad boundaries used in the study. The chip prep script scan be used to created chips and masks from these data. This compressed folder contains the following subfolders (ky_mines, ky_quads, ky_topos, oh_mines, oh_quads, oh_topos, va_mines, va_quads, va_topos). The mines folders contain the mine extents for each topographic map used in the study while the quads folders contain the quadrangle boundaries. All vectore data are in shapefile format. The topos folders contain the topographic maps in TIFF format.
+- **final_model.hdf5**: final trained UNet model used in the study. 
