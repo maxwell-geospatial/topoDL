@@ -10,7 +10,13 @@ Semantic segmentation applied to historic topogrpahic maps
 
 ## Description
 
-This project explores the use of UNet semantic segmentation deep learning for extracting historic surface disturbance associated with coal mining from topographic maps. 
+This project explores the use of UNet semantic segmentation deep learning for extracting historic surface disturbance associated with coal mining from topographic maps. The associated paper can be found [here](Add URL). As part of the repo, we have provided the required input data. We did not provide the image chips and masks generated from the data since the dataset was very large (~70GB). However, you can generate the chips and masks using the provided input data and scripts.  
+
+The goal of our study was to assess model generalization and the impact of training sample size on model performance and generalization. We have generated this repo to provide access to our scripts and data so taht others can experiment with our method or use the data in other studies.
+
+Here is the abstract for the associated paper:
+
+Historic topographic maps, which are georeferenced and made publicly available by the United States Geological Survey (USGS) and the National Map’s Historical Topographic Map Collection (HTMC), are a valuable source of historic land cover and land use (LCLU) information that could be used to expand the historic record when combined with data from moderate spatial resolution Earth observation missions. This is especially true for landscape disturbances that have a long and complex historic record, such as surface coal mining in the Appalachian region of the eastern United States. In this study, we investigate this specific mapping problem using modified UNet semantic segmentation deep learning (DL) and a large example dataset of historic surface mine disturbance extents from the USGS Geology, Geophysics, and Geochemistry Science Center (GGGSC). The primary objectives of this study are to (1) evaluate model generalization to new geographic extents and topographic maps and (2) to assess the impact of training sample size, or the number of manually interpreted topographic maps, on model performance. Using data from the state of Kentucky, our findings suggest that DL semantic segmentation can detect surface mine disturbance features from topographic maps with a high level of accuracy (Dice coefficient = 0.902) and relatively balanced omission and commission error rates (Precision = 0.891, Recall = 0.917). When the model is applied to new topographic maps in Ohio and Virginia to assess generalization, model performance decreases; however, performance is still strong (Ohio Dice coefficient = 0.837 and Virginia Dice Coefficient = 0.763). Further, when reducing the number of topographic maps used to derive training image chips from 84 to 15, model performance was only slightly reduced, suggesting that models that generalize well to new data and geographic extents may not require a large training set. We suggest the incorporation of DL semantic segmentation methods into applied workflows to decrease manual digitizing labor requirements and call for additional research associated with applying semantic segmentation methods to alternative cartographic representations to supplement research focused on multispectral image analysis and classification.  
 
 **Project Lead**
 
@@ -19,7 +25,7 @@ Aaron Maxwell, Assistant Professor, WVU Department of [Geology and Geography](ht
 Website: [WV View](http://www.wvview.org/)
 
 **Project Collaborators** 
-- WVU Geology and Geography: Michelle Bester (PhD student, Geography), Luis A. Guillen (PhD student, Forestry), Jesse Carpinello (MS student, Geology), Yiting Fan (PhD student, Geography), Faith Hartley (MA student, Geography), Shannon Maynard (MS student, Geology), and Jaimee Pyron (MA student, Geography)
+- WVU Geology and Geography: Michelle Bester (PhD student, Geography), Luis A. Guillen (PhD student, Forestry/GRA in Maxwell Lab), Jesse Carpinello (MS student, Geology), Yiting Fan (PhD student, Geography), Faith Hartley (MA student, Geography), Shannon Maynard (MS student, Geology), and Jaimee Pyron (MA student, Geography)
 - WVU John Chambers College of Business and Econonmics: Dr. Chris Ramezan, PhD (Assistant Professor)
 
 **Aknowledgements**
@@ -52,13 +58,20 @@ Website: [WV View](http://www.wvview.org/)
 - R actually uses Python to implement Keras. So, you will need to set up a Python DL environment. We used [Anaconda](https://www.anaconda.com/).
 - You will need to link to your conda environment in R using [reticulate](https://cran.r-project.org/web/packages/reticulate/index.html).
 
+#### Method Overivew
+
+1. Mining and prospect features form the [GGGSC](https://www.sciencebase.gov/catalog/item/5a1492c3e4b09fc93dcfd574) were manually evaluated to generate the training polygon vector data.
+2. Imge chips were derived using the Export Training Data for Deep Learning Tool in ArcGIS Pro. All chips that included any mine features were included. A subset of background-only chips, 150 per quad, were also included (see chip_prep.ipynb and chip_prep_background.ipynb scripts).
+3. UNet was implemented with Keras within R (see the model_prediction_evaluation.R script).
+4. Additinal experimentation was performed to assess the impact of training sample size, or the number of manullay digitized topogrpahic maps (see sample_size_experiments.R script).
+
 #### Implementation Specifics
 
 - This project used a modified version of UNet. Specifically, we used a leaky ReLU activation function for the convolutional layers. We also optimized using Adamax and the Dice loss metric. 
 - Image processing in R was conducted using keras and [magick](https://cran.r-project.org/web/packages/magick/index.html).
 - An image chip size of 128-by-128 pixels was used. The image masks are binary (1 = mining, 0 = background). Images and masks are in PNG format with spatial reference information.
 
-#### Files
+#### Script/Code Files
 
 - **model_prediction_evalaution.R**: main file for image and dataset pre-processing, UNet model compiling, model training, and model evaluation. We also include code to predict back to entire topographic maps. Training the model required roughly 24 hours on our single GPU machine. Predicting to a single topographic map took roughly 15 minutes. 
 - **chip_prep.ipynb**: code for creating image chips (just chips with mining present). This makes use of the Export Training Data for Deep Learning Tool in ArcGIS Pro. 
@@ -71,4 +84,6 @@ Website: [WV View](http://www.wvview.org/)
 - **remove_ponds.R**: code to remove ponds from the example data. 
 - **tables.zip**: tables used to generate graphs. 
 
-
+#### Data Files
+- **tables.zip**: tables used to generate graphs. 
+- **topo_dl_data.zip**: input topographic maps, mine extents, and quad boundaries used in the study. The chip prep script scan be used to created chips and masks from these data. Witin the compressed folder:
