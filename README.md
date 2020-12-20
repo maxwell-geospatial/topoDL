@@ -1,5 +1,3 @@
-# topoDL
-Semantic segmentation applied to historic topogrpahic maps
 # UNet Semantic Segmentation for Extracting Historic Surface Mining Disturbance from Topographic Maps
 
 ![Project Image](Figure_3-01.png)
@@ -12,9 +10,11 @@ Semantic segmentation applied to historic topogrpahic maps
 
 Maxwell, A.E., M.S. Bester, L.A. Guillen, C.A. Ramezan, D.J. Carpinello, Y. Fan, F.M. Hartley, S.M. Maynard, and J.L. Pyron, 2020. Semantic segmentation deep learning for extracting surface mine extents from historic topographic maps, *Remote Sensing*, 12(24): 1-25. https://doi.org/10.3390/rs12244145. 
 
+The associated data can be downloaded [here](http://www.wvview.org/research.html).
+
 This project explores the use of UNet semantic segmentation deep learning for extracting historic surface disturbance associated with coal mining from topographic maps. The associated paper can be found [here](https://www.mdpi.com/2072-4292/12/24/4145). As part of the repo, we have provided the required input data. We did not provide the image chips and masks generated from the data since the dataset was very large (~70GB). However, you can generate the chips and masks using the provided input data and scripts.  
 
-The goal of our study was to assess model generalization and the impact of training sample size on model performance and generalization. We have generated this repo to provide access to our scripts and data so taht others can experiment with our method or use the data in other studies.
+The goal of our study was to assess model generalization and the impact of training sample size on model performance and generalization. We have generated this repo to provide access to our scripts and data so that others can experiment with our method or use the data in other studies.
 
 Here is the abstract for the associated paper:
 
@@ -65,7 +65,7 @@ Website: [WV View](http://www.wvview.org/)
 1. Mining and prospect features form the [GGGSC](https://www.sciencebase.gov/catalog/item/5a1492c3e4b09fc93dcfd574) were manually evaluated to generate the training polygon vector data.
 2. Imge chips were derived using the Export Training Data for Deep Learning Tool in ArcGIS Pro. All chips that included any mine features were included. A subset of background-only chips, 150 per quad, were also included (see chip_prep.ipynb and chip_prep_background.ipynb scripts).
 3. UNet was implemented with Keras within R (see the model_prediction_evaluation.R script).
-4. Additinal experimentation was performed to assess the impact of training sample size, or the number of manullay digitized topogrpahic maps (see sample_size_experiments.R script).
+4. Additinal experimentation was performed to assess the impact of training sample size, or the number of manually digitized topogrpahic maps (see sample_size_experiments.R script).
 
 #### Implementation Specifics
 
