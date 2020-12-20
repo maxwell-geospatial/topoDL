@@ -10,7 +10,7 @@ Semantic segmentation applied to historic topogrpahic maps
 
 ## Description
 
-Maxwell, A.E., M.S. Bester, L.A. Guillen, C.A. Ramezan, D.J. Carpinello*, Y. Fan, F.M. Hartley, S.M. Maynard, and J.L. Pyron, 2020. Semantic segmentation deep learning for extracting surface mine extents from historic topographic maps, *Remote Sensing*, 12(24): 1-25. https://doi.org/10.3390/rs12244145. 
+Maxwell, A.E., M.S. Bester, L.A. Guillen, C.A. Ramezan, D.J. Carpinello, Y. Fan, F.M. Hartley, S.M. Maynard, and J.L. Pyron, 2020. Semantic segmentation deep learning for extracting surface mine extents from historic topographic maps, *Remote Sensing*, 12(24): 1-25. https://doi.org/10.3390/rs12244145. 
 
 This project explores the use of UNet semantic segmentation deep learning for extracting historic surface disturbance associated with coal mining from topographic maps. The associated paper can be found [here](https://www.mdpi.com/2072-4292/12/24/4145). As part of the repo, we have provided the required input data. We did not provide the image chips and masks generated from the data since the dataset was very large (~70GB). However, you can generate the chips and masks using the provided input data and scripts.  
 
