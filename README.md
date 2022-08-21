@@ -63,7 +63,7 @@ Website: [WV View](http://www.wvview.org/)
 #### Method Overivew
 
 1. Mining and prospect features form the [GGGSC](https://www.sciencebase.gov/catalog/item/5a1492c3e4b09fc93dcfd574) were manually evaluated to generate the training polygon vector data.
-2. Imge chips were derived using the Export Training Data for Deep Learning Tool in ArcGIS Pro. All chips that included any mine features were included. A subset of background-only chips, 150 per quad, were also included (see chip_prep.ipynb and chip_prep_background.ipynb scripts).
+2. Image chips were derived using the Export Training Data for Deep Learning Tool in ArcGIS Pro. All chips that included any mine features were included. A subset of background-only chips, 150 per quad, were also included (see chip_prep.ipynb and chip_prep_background.ipynb scripts).
 3. UNet was implemented with Keras within R (see the model_prediction_evaluation.R script).
 4. Additinal experimentation was performed to assess the impact of training sample size, or the number of manually digitized topogrpahic maps (see sample_size_experiments.R script).
 
